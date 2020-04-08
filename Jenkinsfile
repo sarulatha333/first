@@ -1,5 +1,3 @@
 node {
-	stage ('Build') {
-		sh 'ls -al'
+	step([$class: 'CodescannerPublisher'])
     }
-}
