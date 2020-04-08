@@ -4,8 +4,7 @@ pipeline{
     stages{
         stage('Pre-Build') {
             steps {
-              step([$class: 'CodescannerPublisher']): Symbian CodeScanner
-                
+                step([$class: 'CodescannerPublisher']): threshold
             }
         }
     }  
