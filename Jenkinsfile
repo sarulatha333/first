@@ -1,11 +1,5 @@
-pipeline{
-    agent any
-    stages{
-        stage('Pre-Build') {
-            steps {
-                    
-                    step([$class: 'CodescannerPublisher', threshold: '150'])
-            }
-        }
-    }  
+node {
+	stage ('Build') {
+		sh 'ls -al'
+    }
 }
