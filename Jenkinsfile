@@ -1,3 +1,6 @@
 node {
-	step([$class: 'CodescannerPublisher'])
+    catchError {
+        sh 'might fail'
     }
+    step([$class: 'CodescannerPublisher'])
+}
