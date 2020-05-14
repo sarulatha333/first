@@ -1,3 +1,12 @@
-node {
-    step([$class: 'CodescannerPublisher'])
-}
+pipeline{
+    agent any
+    stages{
+        stage('Pre-Build'){
+            steps{
+                script{
+                    sh 'env'
+                }    
+            }
+        }
+    }
+}    
