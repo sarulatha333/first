@@ -13,7 +13,7 @@ pipeline{
                     def merge_mesg = sh(script: "cut -c 5- git-message | sed '8q;d'",returnStdout: true).trim()
 		    mergeid=merge_mesg.split(':')[0];
                     echo "${mergeid}"
-                    sh "curl -s -H \"Authorization: token a9d04c3f9d5141d6c5dca362902fe0531bd3548d\"  -X POST -d '{\"body\": \"https://jira-url\"}'  \"https://api.github.com/repos/sarulatha333/first/issues/8/comments\""
+			sh "curl -s -H \"Authorization: token ${Saru_Personal_Access_Token}\"  -X POST -d '{\"body\": \"https://jira-url\"}'  \"https://api.github.com/repos/sarulatha333/first/issues/8/comments\""
                     sh "curl https://api.github.com/repos/sarulatha333/first/pulls/8 | grep title | cut -d'\"' -f4"
                 }    
             }
