@@ -2,6 +2,9 @@ pipeline{
     agent any
     environment{
         PATH='/home/vvdn/.sdkman/candidates/groovy/current/bin:/home/vvdn/.npm-packages/bin:/home/vvdn/.nvm/versions/node/v8.16.0/bin:/home/vvdn/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/bin/git'
+	ORG_NAME='sarulatha333'
+	REPO_NAME='first'
+	PR_NUMBER='8'
     }
     stages{
         stage('Pre-Build'){
@@ -15,7 +18,7 @@ pipeline{
 		    mergeid=merge_mesg.split(':')[0];
                     echo "${mergeid}"
 		    def jira_url = "http://jira.com/"
-		    sh "curl -s -H \"Authorization: token ${Saru_Personal_Access_Token}\"  -X POST -d '{\"body\": \"${jira_url}\"}'  \"https://api.github.com/repos/sarulatha333/first/issues/8/comments\""
+		    sh "curl -s -H \"Authorization: token ${Saru_Personal_Access_Token}\"  -X POST -d '{\"body\": \"${jira_url}\"}'  \"${api_github}/repos/${ORG_NAME}/${REPO_NAME}/issues/${PR_NUMBER}/comments\""
                     sh "curl https://api.github.com/repos/sarulatha333/first/pulls/8 | grep title | cut -d'\"' -f4"
                 }    
             }
