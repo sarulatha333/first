@@ -14,7 +14,8 @@ pipeline{
                     def merge_mesg = sh(script: "cut -c 5- git-message | sed '5q;d'",returnStdout: true).trim()
 		    mergeid=merge_mesg.split(':')[0];
                     echo "${mergeid}"
-		    sh "curl -s -H \"Authorization: token ${Saru_Personal_Access_Token}\"  -X POST -d '{\"body\": \"https://jira-url\"}'  \"https://api.github.com/repos/sarulatha333/first/issues/8/comments\""
+		    def jira_url = "http://jira.com/"
+		    sh "curl -s -H \"Authorization: token ${Saru_Personal_Access_Token}\"  -X POST -d '{\"body\": '${jira_url}'}'  \"https://api.github.com/repos/sarulatha333/first/issues/8/comments\""
                     sh "curl https://api.github.com/repos/sarulatha333/first/pulls/8 | grep title | cut -d'\"' -f4"
                 }    
             }
