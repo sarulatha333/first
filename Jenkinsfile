@@ -22,4 +22,24 @@ pipeline{
             }
         }
     }
+     post{
+        success{
+            script{
+                if(env.BRANCH_NAME!='feature/ci-pipeline'){
+                    if(env.BRANCH_NAME=='feature/ci-pipeline'){
+                        echo "inside second if"
+                    }
+                    else{
+                        echo "inside second else"
+                    }
+                }
+                else if(env.BRANCH_NAME!='feature/ci-pipeline'){
+                    echo "outside first if"
+                }
+                else{
+                    echo "WARNING!!!!!!!!!!!!!!!"
+                }
+            }
+        }
+    }
 }    
