@@ -35,14 +35,19 @@ pipeline{
             script{
                 if(env.BRANCH_NAME!='feature/ci-pipeline'){
                     if(env.BRANCH_NAME=='feature/ci-pipeline'){
-                        echo "inside second if"
+                        echo "inside first if"
                     }
                     else{
-                        echo "inside second else"
+                        echo "inside first else"
                     }
                 }
                 else if(env.BRANCH_NAME!='feature/ci-pipeline'){
-                    echo "outside first if"
+			if(env.BRANCH_NAME!='feature/ci-pipeline'){			
+                            echo "inside second if"
+			}
+			else{
+				echo "inside second else"
+			}
                 }
                 else{
                     echo "WARNING!!!!!!!!!!!!!!!!!"
