@@ -26,7 +26,7 @@ pipeline{
         stage('master-branch-stuff'){
             when { branch "PR-/*" }
             steps {
-                echo 'run this stage - ony if the branch = master branch'
+                echo 'run this stage - ony if the branch = master branch...'
             }
         }
     }
