@@ -6,6 +6,7 @@ Library    OperatingSystem
 Alphabets Argument Testcase
     [Tags]    test-args
     Check Args  
+    check
     Check List Args
 
 *** Keywords ***
