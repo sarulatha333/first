@@ -1,1 +1,2 @@
 Testing
+echo "checking repo size"
