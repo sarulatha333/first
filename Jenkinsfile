@@ -1,7 +1,6 @@
 pipeline{
     agent any
     environment{
-        PATH='/home/vvdn/.sdkman/candidates/groovy/current/bin:/home/vvdn/.npm-packages/bin:/home/vvdn/.nvm/versions/node/v8.16.0/bin:/home/vvdn/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/bin/git'
 	ORG_NAME='sarulatha333'
 	REPO_NAME='first'
 	PR_NUMBER='8'
